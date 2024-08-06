@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  color-scheme: dark only;
+  font-family: Manrope, Arial, sans-serif;
+  --nav-height: 60px;
+  --nav-background: #343a40;
+  --dropdown-height: 40px;
+  --nav-link-color: rgba(255, 255, 255, 0.9);
+  --dropdown-color: rgba(0, 0, 0, 0.9);
+  --black: #fff;
+  --btn-search: #2185d0;
+  --btn-search-hover: #1678c2;
+  font-size: 18px;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/***********************************************
+
+    GLOBAL STYLES
+
+***********************************************/
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-search {
+  background-color: var(--btn-search);
+  color: #f3f3f3;
+}
+
+.btn-search:hover {
+  background-color: var(--btn-search-hover);
+}
+
+/***********************************************
+
+    NAVBAR
+
+***********************************************/
+.navbar {
+  display: flex;
+  align-items: center;
+  height: var(--nav-height);
+  background-color: var(--nav-background);
+  padding: 0.5rem 1rem;
+}
+
+.navbar .logo {
+  margin-right: 1.25rem;
+}
+
+.navbar .logo a {
+  text-decoration: none;
+  color: var(--nav-link-color);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.navbar .navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar .navbar-content .navbar-list {
+  display: flex;
+}
+
+.navbar .navbar-content .navbar-list .navbar-item {
+  list-style-type: none;
+  padding: 0.5rem 1rem;
+}
+
+.navbar .navbar-content .navbar-list .navbar-item .navbar-link {
+  color: var(--nav-link-color);
+  text-decoration: none;
+}
+
+/***********************************************
+
+    NAVBAR RIGHT
+
+***********************************************/
+.search-input {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+}
+
+/***********************************************
+
+    DROPDOWN
+
+***********************************************/
+.dropdown-list {
+  position: absolute;
+  top: var(--nav-height);
+  display: flex;
+  flex-direction: column;
+  width: clamp(160px, 120px, 220px);
+  background-color: var(--black);
+  /* padding: 0.5rem; */
+}
+
+.dropdown-list a {
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--nav-background);
+}
+
+.dropdown-list a:hover {
+  background-color: #1678c2;
+  color: var(--nav-link-color);
+}
+
+.dropdown-inner {
+  left: 100%;
+  /* top: 0; */
+}
+/***********************************************
+
+    BURGER MENU
+
+***********************************************/
+
+/***********************************************
+
+    RESPONSIVE DESIGN
+
+***********************************************/
+@media screen and (max-width: 992px) {
+  .navbar {
+    padding: 0;
+    height: var(--nav-height);
+  }
+  .navbar .navbar-content {
+    /* display: none; */
+    position: absolute;
+    top: var(--nav-height);
+    right: 0;
+    width: 33vw;
+    min-height: calc(100vh - var(--nav-height));
+    background-color: var(--nav-background);
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .navbar .navbar-content .navbar-list {
+    flex-direction: column;
+    width: 100%;
+  }
+}
